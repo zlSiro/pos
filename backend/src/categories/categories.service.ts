@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateCategoryDto } from './dto/create-category.dto';
@@ -21,16 +21,23 @@ export class CategoriesService {
     return this.categoryRepository.find();
   }
 
-  findOne(id: number) {
-    const category = this.categoryRepository.findOneBy({id})
+  async findOne(id: number) {
+    const category = await this.categoryRepository.findOneBy({id})
+    if (!category) {
+      throw new NotFoundException("La categoria no existe...")
+    }
     return category
   }
 
-  update(id: number, updateCategoryDto: UpdateCategoryDto) {
-    return `This action updates a #${id} category`;
+  async update(id: number, updateCategoryDto: UpdateCategoryDto) {
+    const category = await this.findOne(id)
+    category.name = updateCategoryDto.name
+    return await this.categoryRepository.save(category)
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} category`;
+  async remove(id: number) {
+    const category = await this.findOne(id)
+    await this.categoryRepository.remove(category)
+    return "Categoria elminada."
   }
 }

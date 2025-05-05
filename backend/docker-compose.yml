@@ -13,7 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init/postgres:/docker-entrypoint-initdb.d
+  #     - ./init/postgres:/docker-entrypoint-initdb.d # solo en el note
 
   # mysql:
   #   image: mysql:8.0
@@ -32,4 +32,4 @@ services:
 
 volumes:
   postgres_data:
-  mysql_data:
+  #mysql_data:

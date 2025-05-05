@@ -10,23 +10,23 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post()
-  getPost() : string {
-    return this.appService.postHello();
-  }
+  // @Post()
+  // getPost() : string {
+  //   return this.appService.postHello();
+  // }
 
-  /* @Post()
-  getPost() {
-    return "Desde @Post"
-  } */
+  // @Post()
+  // getPost() {
+  //   return "Desde @Post"
+  // }
 
-  @Put()
-  getPut() {
-    return "Desde @Put"
-  }
+  // @Put()
+  // getPut() {
+  //   return "Desde @Put"
+  // }
 
-  @Patch()
-  getPatch() {
-    return "Desde @Patch"
-  }
+  // @Patch()
+  // getPatch() {
+  //   return "Desde @Patch"
+  // }
 }

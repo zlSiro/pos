@@ -15,7 +15,8 @@ import { typeOrmConfig } from './config/typeorm.config';
       useFactory: typeOrmConfig,
       inject: [ConfigService]
     }),
-    CategoriesModule],
+    CategoriesModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

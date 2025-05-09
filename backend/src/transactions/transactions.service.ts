@@ -1,8 +1,8 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { endOfDay, isValid, parseISO, startOfDay } from 'date-fns';
-import { CouponsService } from 'src/coupons/coupons.service';
-import { Product } from 'src/products/entities/product.entity';
+import { CouponsService } from '../coupons/coupons.service';
+import { Product } from '../products/entities/product.entity';
 import { Between, FindManyOptions, Repository } from 'typeorm';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { Transaction, TransactionContent } from './entities/transaction.entity';

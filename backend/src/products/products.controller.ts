@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
-import { IdValidationPipe } from 'src/common/pipes/id-validation/id-validation.pipe';
+import { IdValidationPipe } from '../common/pipes/id-validation/id-validation.pipe';
 import { CreateProductDto } from './dto/create-product.dto';
 import { GetProductQueryDto } from './dto/get-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';

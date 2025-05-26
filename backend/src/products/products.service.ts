@@ -93,6 +93,6 @@ export class ProductsService {
 
     const product = await this.findOne(id)
     await this.productRepository.remove(product)
-    return "Producto Eliminado";
+    return {message: "Producto Eliminado"};
   }
 }
